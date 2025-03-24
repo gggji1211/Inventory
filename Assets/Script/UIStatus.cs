@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIStatus : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI attackText;
+    [SerializeField] private TextMeshProUGUI defenseText;
+    [SerializeField] private TextMeshProUGUI critical;
 
-    // Update is called once per frame
-    void Update()
+
+    // 캐릭터 정보를 UI에 반영하는 메서드
+    public void UpdateStatusInfo(Character player)
     {
-        
+        healthText.text = $"{player.Health}";
+        attackText.text = $"{player.AttackPower}";
+        defenseText.text = $"{player.Defense}";
+        critical.text = $"{player.Critical}";
+
+
     }
 }
