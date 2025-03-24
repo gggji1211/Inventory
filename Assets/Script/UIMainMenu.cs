@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIMainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private TextMeshProUGUI levelText;
 
-    // Update is called once per frame
-    void Update()
+    // 캐릭터 정보를 UI에 반영하는 메서드
+    public void UpdateCharacterInfo(Character player)
     {
         
+        nameText.text = $"이름: {player.Name}";
+        levelText.text = $"레벨: {player.Level}";
     }
 }

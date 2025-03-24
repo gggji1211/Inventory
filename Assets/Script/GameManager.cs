@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance { get; private set; } 
+
+    public Character Player { get; private set; } 
+
+    [SerializeField] private UIMainMenu mainMenuUI;
+    [SerializeField] private UIStatus statusUI;
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        SetData(); 
+    }
+
+    public void SetData()
+    {
+        Player = new Character("스파르타", 1, 100 , 35,40,35);
+
+        mainMenuUI.UpdateCharacterInfo(Player);
+        statusUI.UpdateStatusInfo(Player);
     }
 }
