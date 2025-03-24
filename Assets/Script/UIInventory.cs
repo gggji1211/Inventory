@@ -5,28 +5,24 @@ using UnityEngine.UI;
 
 public class UIInventory : MonoBehaviour 
 {
-    [SerializeField]
-    
-     private Button statusButton;
-     private Button inventoryButton;
+    [SerializeField] private GameObject slotPrefab;  
+    [SerializeField] private Transform slotParent; 
+    [SerializeField] private int slotCount = 9; 
+
+    private List<UISlot> slots = new List<UISlot>();
 
     private void Start()
     {
-        
+        InitInventoryUI();
     }
 
-    public void OpenMainMenu()
+    private void InitInventoryUI()
     {
-        UIManager.Instance.OpenMainMenu();
-    }
-
-    public void OpenStatus()
-    {
-        UIManager.Instance.OpenStatus();
-    }
-
-    public void OpenInventory()
-    {
-        UIManager.Instance.OpenInventory();
+        for (int i = 0; i < slotCount; i++)
+        {
+            GameObject newSlotObj = Instantiate(slotPrefab, slotParent);
+            UISlot newSlot = newSlotObj.GetComponent<UISlot>(); 
+                slots.Add(newSlot);
+        }
     }
 }
