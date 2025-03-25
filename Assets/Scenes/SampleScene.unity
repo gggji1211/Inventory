@@ -947,14 +947,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349732932}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 162871232}
   m_Father: {fileID: 637326588}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 607.85, y: -748.48}
@@ -1534,8 +1534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8892203aae5ba1643ba4d404fdc7c6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusButton: {fileID: 835675564}
-  inventoryButton: {fileID: 1680943578}
   nameText: {fileID: 41991421}
   levelText: {fileID: 503684933}
 --- !u!1 &550988070
@@ -1564,14 +1562,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550988070}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2104269995}
   m_Father: {fileID: 1951583105}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 607.85, y: -748.48}
@@ -2076,7 +2074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &835675563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2933,7 +2931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1394845401
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2946,8 +2944,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 835675563}
   - {fileID: 1680943577}
+  - {fileID: 835675563}
   m_Father: {fileID: 873875545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3799,6 +3797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f77f7079a047b409d808509be60352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 1951583106}
   mainMenuUI: {fileID: 524298026}
   statusUI: {fileID: 637326589}
 --- !u!4 &1821136623
@@ -3866,9 +3865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8241cfbc579be84db5f4e9a1dc53eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 0}
+  slotPrefab: {fileID: 7368793687099361690, guid: b529881090bb2b14988a18cdacdb8ab8, type: 3}
   slotParent: {fileID: 1967994275}
-  slotCount: 9
 --- !u!1 &1967994274
 GameObject:
   m_ObjectHideFlags: 0

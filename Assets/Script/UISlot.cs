@@ -6,19 +6,28 @@ using UnityEngine.UI;
 
 public class UISlot : MonoBehaviour
 {
-    [SerializeField] private Image itemIcon;  // 아이템 이미지
-    [SerializeField] private TextMeshProUGUI itemCountText; // 아이템 개수
+    [SerializeField] private Image itemIcon;
+    public Item item = null;
 
-    public void SetItem(Sprite icon, int count)
-    {
-        itemIcon.sprite = icon;
-        itemCountText.text = count > 1 ? count.ToString() : "";
-        RefreshUI(true);
-    }
+     public void UpdateUi()
+     {
 
-    public void RefreshUI(bool isActive)
+     }
+    public void SetItem(Item item)
     {
-        itemIcon.gameObject.SetActive(isActive);
-        itemCountText.gameObject.SetActive(isActive);
+      this.item = item;
+        if (item != null)
+        {
+            itemIcon.gameObject.SetActive(true);
+
+        }
+        else
+        {
+            itemIcon.gameObject.SetActive(false);
+
+            itemIcon.sprite = item.itemIcon;
+        }
+        UpdateUi();
     }
 }
+
