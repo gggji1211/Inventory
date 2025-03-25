@@ -17,7 +17,7 @@ public class UIInventory : MonoBehaviour
         Debug.Log("Additem");
         for (int i = 0; i < slots.Count; i++)
         {
-            if (string.IsNullOrEmpty( slots[i].item.itemName ) )
+            if (string.IsNullOrEmpty(slots[i].item.itemName))
             {
                 slots[i].SetItem(item);
                 Debug.Log(item.itemName);
@@ -42,7 +42,7 @@ public class UIInventory : MonoBehaviour
             slots.Add(newSlot);
         }
 
-  
+
     }
 
 

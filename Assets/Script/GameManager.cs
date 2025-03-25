@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
     public void SetData()
     {
         Sprite swordIcon = Resources.Load<Sprite>("Sprite/GUI/GUI_0");
-
         Sprite shieldIcon = Resources.Load<Sprite>("Sprite/GUI/GUI_1");
         Sprite bowIcon = Resources.Load<Sprite>("Sprite/GUI/GUI_2");
 
