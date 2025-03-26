@@ -22,6 +22,7 @@ public class UIInventory : MonoBehaviour
                 return;
             }
         }
+
     }
 
     private void Awake()

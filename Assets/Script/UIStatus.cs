@@ -11,7 +11,7 @@ public class UIStatus : MonoBehaviour
     [SerializeField] private TextMeshProUGUI critical;
 
 
-    // 캐릭터 정보를 UI에 반영하는 메서드
+    // 캐릭터 정보를 UI에 반영
     public void UpdateStatusInfo(Character player)
     {
         healthText.text = $"{player.Health}";

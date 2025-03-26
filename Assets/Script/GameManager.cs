@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,22 +36,19 @@ public class GameManager : MonoBehaviour
 
     public void SetData()
     {
-        Sprite swordIcon = Resources.Load<Sprite>("Sprite/GUI/GUI_0");
-        if (swordIcon == null) Debug.LogError("swordIcon 로드 실패!");
+        //Sprite swordIcon = Resources.Load<Sprite>("Sprite/GUI_0");
 
-        Sprite shieldIcon = Resources.Load<Sprite>("Sprite/GUI/GUI_1");
-        if (shieldIcon == null) Debug.LogError("shieldIcon 로드 실패!");
+        // Sprite shieldIcon = Resources.Load<Sprite>("Sprite/GUI_1");
+        // Sprite bowIcon = Resources.Load<Sprite>("Sprite/GUI_2");
 
-        Sprite bowIcon = Resources.Load<Sprite>("Sprite/GUI/GUI_2");
-        if (bowIcon == null) Debug.LogError("bowIcon 로드 실패!");
-
+        Sprite[] sprite = Resources.LoadAll<Sprite>("Sprite/GUI");
 
 
         List<Item> allItems = new List<Item>
         {
-            new Item("검", swordIcon,10,3),
-            new Item("방패", shieldIcon,3,10),
-            new Item("활", bowIcon,15,0)
+            new Item("검", System.Array.Find(sprite,x => x.name == "GUI_0"),10,3),  // GUI 파일 가져오기 
+            new Item("방패", System.Array.Find(sprite,x => x.name == "GUI_1"),3,10),
+            new Item("활",  System.Array.Find(sprite,x => x.name == "GUI_2"),15,0)
         };
 
         foreach (var item in allItems)

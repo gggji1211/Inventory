@@ -13,7 +13,7 @@ public class Character
     public int Health { get; private set; }
     public int Critical { get; private set; }
 
-    public Character(string name, int level, int health, int attack, int defense, int critical)
+    public Character(string name, int level, int health, int attack, int defense, int critical) // Ω∫≈»
     {
         Name = name;
         Level = level;
@@ -24,19 +24,19 @@ public class Character
         Inventory = new List<Item>(); 
     }
 
-    public void AddItem(Item newItem)
+    public void AddItem(Item newItem) 
     {
      
         Inventory.Add(newItem);
     }
-    public void EquipItem(Item item)
+    public void EquipItem(Item item) //  Ω∫≈» ¡ı∞°
     {
         AttackPower += item.AttackBonus;
         Defense += item.DefenseBonus;
 
     }
 
-    public void UnequipItem(Item item)
+    public void UnequipItem(Item item) // Ω∫≈» ∞®º“
     {
         AttackPower -= item.AttackBonus;
         Defense -= item.DefenseBonus;
