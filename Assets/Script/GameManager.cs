@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private UIInventory inventory;
     [SerializeField] private UIMainMenu mainMenuUI;
-    [SerializeField] private UIStatus statusUI;
+    [SerializeField] public UIStatus statusUI;
 
     private void Awake()
     {

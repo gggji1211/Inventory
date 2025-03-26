@@ -31,22 +31,18 @@ public class Character
     }
     public void EquipItem(Item item)
     {
-        if (item != null)
-        {
-            AttackPower += item.AttackBonus;
-            Defense += item.DefenseBonus;
-        }
+        AttackPower += item.AttackBonus;
+        Defense += item.DefenseBonus;
+
     }
 
     public void UnequipItem(Item item)
     {
-        if (item != null)
-        {
-            AttackPower -= item.AttackBonus;
-            Defense -= item.DefenseBonus;
-        }
-    }
+        AttackPower -= item.AttackBonus;
+        Defense -= item.DefenseBonus;
 
+    
+    }
 }
     
 

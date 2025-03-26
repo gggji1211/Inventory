@@ -29,24 +29,30 @@ public class UISlot : MonoBehaviour
 
     public void ToggleEquip()
     {
-        if (GameManager.Instance.Player.Inventory.Count == 0 || item == null)
+        // GameManager에서 Player의 인벤토리에서 아이템이 존재하는지 확인
+        if (!GameManager.Instance.Player.Inventory.Contains(item))
         {
-            Debug.Log("아이템이 없습니다.");
-            return; 
+            Debug.Log("아이템이 인벤토리에 존재하지 않습니다.");
+            return;  // 인벤토리에 아이템이 없으면 장착/해제 불가능
         }
 
+        // equipIndicator가 활성화 되어있는지 확인
         if (equipIndicator.activeSelf == false)
         {
             Debug.Log("장착됨");
             equipIndicator.SetActive(true);
 
-            Player.EquipItem(item);  
+            GameManager.Instance.Player.EquipItem(item);  // 아이템 장착
         }
         else
         {
             equipIndicator.SetActive(false);
-            Player.UnequipItem(item);  
+            GameManager.Instance.Player.UnequipItem(item);  // 아이템 해제
         }
-    }
 
+        // 장착/해제 후 능력치 UI 업데이트
+        GameManager.Instance.statusUI.UpdateStatusInfo(GameManager.Instance.Player);
+    }
 }
+
+
