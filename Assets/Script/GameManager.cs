@@ -36,8 +36,13 @@ public class GameManager : MonoBehaviour
     public void SetData()
     {
         Sprite swordIcon = Resources.Load<Sprite>("Sprite/GUI/GUI_0");
+        if (swordIcon == null) Debug.LogError("swordIcon 로드 실패!");
+
         Sprite shieldIcon = Resources.Load<Sprite>("Sprite/GUI/GUI_1");
+        if (shieldIcon == null) Debug.LogError("shieldIcon 로드 실패!");
+
         Sprite bowIcon = Resources.Load<Sprite>("Sprite/GUI/GUI_2");
+        if (bowIcon == null) Debug.LogError("bowIcon 로드 실패!");
 
 
 
