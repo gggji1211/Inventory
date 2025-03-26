@@ -13,8 +13,6 @@ public class UIInventory : MonoBehaviour
 
     {
         //플레이어 아이템 추가시 빈슬롯찾아서 아이템 셋데이터
-        Debug.Log(slots.Count);
-        Debug.Log("Additem");
         for (int i = 0; i < slots.Count; i++)
         {
             if (string.IsNullOrEmpty(slots[i].item.itemName))

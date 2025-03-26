@@ -7,9 +7,11 @@ public class UISlot : MonoBehaviour
 {
     [SerializeField] private Image itemIcon;
     public Item item = null;
-    public GameObject equipIndicator; // "E" 표시
+    public GameObject equipIndicator;
 
-    private bool isEquipped = false;
+    public Character Player;
+
+
 
     public void SetItem(Item newItem)
     {
@@ -23,17 +25,28 @@ public class UISlot : MonoBehaviour
         {
             itemIcon.gameObject.SetActive(false);
         }
-        UpdateUi();
     }
 
     public void ToggleEquip()
     {
-        isEquipped = !isEquipped;
-        equipIndicator.SetActive(isEquipped);
+        if (GameManager.Instance.Player.Inventory.Count == 0 || item == null)
+        {
+            Debug.Log("아이템이 없습니다.");
+            return; 
+        }
+
+        if (equipIndicator.activeSelf == false)
+        {
+            Debug.Log("장착됨");
+            equipIndicator.SetActive(true);
+
+            Player.EquipItem(item);  
+        }
+        else
+        {
+            equipIndicator.SetActive(false);
+            Player.UnequipItem(item);  
+        }
     }
 
-    public void UpdateUi()
-    {
-        equipIndicator.SetActive(isEquipped);
-    }
 }

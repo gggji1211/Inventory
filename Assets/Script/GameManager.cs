@@ -43,9 +43,9 @@ public class GameManager : MonoBehaviour
 
         List<Item> allItems = new List<Item>
         {
-            new Item("검", swordIcon),
-            new Item("방패", shieldIcon),
-            new Item("활", bowIcon)
+            new Item("검", swordIcon,10,3),
+            new Item("방패", shieldIcon,3,10),
+            new Item("활", bowIcon,15,0)
         };
 
         foreach (var item in allItems)
